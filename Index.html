@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0d14">
+  <title>ORIGO MARKETPLACE</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">O</span>
+      <span>
+        <strong>ORIGO</strong>
+        <small>MARKETPLACE</small>
+      </span>
+    </a>
+
+    <div class="top-actions">
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☀</button>
+      <button id="helpBtn" class="icon-btn" aria-label="Help">?</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">DIGITAL PIXEL MARKETPLACE</p>
+        <h1>Own a Pixel.<br><span>Show Your World.</span></h1>
+        <p class="hero-copy">
+          Claim a space, customize it, and showcase your work or brand.
+          This prototype is completely free.
+        </p>
+        <button id="exploreBtn" class="primary-btn">Explore Marketplace <span>→</span></button>
+      </div>
+
+      <div class="hero-card">
+        <div class="mini-grid" id="miniGrid"></div>
+        <div class="hero-card-label">
+          <span class="live-dot"></span>
+          ORIGO DIGITAL SPACE
+        </div>
+      </div>
+    </section>
+
+    <section id="marketplace" class="marketplace-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">MARKETPLACE</p>
+          <h2>Explore the Grid</h2>
+        </div>
+        <div class="grid-stats">
+          <span><i class="legend available"></i> Available</span>
+          <span><i class="legend owned"></i> Owned</span>
+          <span><i class="legend yours"></i> Yours</span>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search pixels, brands, usernames..." autocomplete="off">
+        </label>
+
+        <select id="filterSelect" class="select">
+          <option value="all">All Pixels</option>
+          <option value="available">Available</option>
+          <option value="owned">Owned</option>
+          <option value="yours">Yours</option>
+          <option value="newest">Newest</option>
+        </select>
+
+        <div class="zoom-controls">
+          <button id="zoomOut" class="small-btn" aria-label="Zoom out">−</button>
+          <button id="resetZoom" class="zoom-value">100%</button>
+          <button id="zoomIn" class="small-btn" aria-label="Zoom in">+</button>
+        </div>
+      </div>
+
+      <div class="canvas-shell" id="canvasShell">
+        <div class="canvas-world" id="canvasWorld">
+          <div class="pixel-grid" id="pixelGrid" aria-label="Origo pixel marketplace"></div>
+        </div>
+        <div class="canvas-hint">Drag to move · Scroll to zoom · Tap a pixel to view</div>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h2>Your space. Your identity.</h2>
+      <div class="steps">
+        <article><b>01</b><h3>Choose</h3><p>Select an available pixel on the marketplace.</p></article>
+        <article><b>02</b><h3>Customize</h3><p>Give your pixel a color, title and description.</p></article>
+        <article><b>03</b><h3>Connect</h3><p>Add your website and let visitors discover your work.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>ORIGO MARKETPLACE</span>
+    <span>Own a Pixel. Show Your World.</span>
+  </footer>
+
+  <div class="modal-backdrop hidden" id="pixelModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalPixelPreview" class="modal-pixel-preview"></div>
+      <p class="eyebrow">PIXEL DETAIL</p>
+      <h2 id="modalTitle">Pixel #0001</h2>
+      <div id="modalBody"></div>
+      <div id="editArea" class="edit-area hidden">
+        <label>Color<input id="colorInput" type="color" value="#2d7cff"></label>
+        <label>Title<input id="titleInput" type="text" maxlength="40" placeholder="Your title"></label>
+        <label>Description<textarea id="descriptionInput" maxlength="120" placeholder="Short description"></textarea></label>
+        <label>Website<input id="websiteInput" type="url" placeholder="https://example.com"></label>
+        <div class="modal-actions">
+          <button id="savePixel" class="primary-btn">Save Pixel</button>
+          <button id="cancelEdit" class="secondary-btn">Cancel</button>
+        </div>
+      </div>
+      <div class="modal-actions" id="normalActions"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
